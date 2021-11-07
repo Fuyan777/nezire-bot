@@ -48,6 +48,8 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def message_text(event):
+    profile = line_bot_api.get_profile(event.source.user_id)
+
     message_received = event.message.text
     message_send = ""
 
@@ -61,8 +63,10 @@ def message_text(event):
         message_send = "ムゥー、嫌っ！"
     elif message_received == "あきらめる":
         message_send = "あ、聞いて、知ってる、昔、挫折しちゃってヒーロー諦めちゃって問題起こしちゃった子がいたんだよ、知ってた！？"
-    elif message_send == "大変":
+    elif message_received == "大変":
         message_send = "大変だよねえ、ちゃんと考えないと辛いよ、これは辛いよー"
+    elif message_received == "こんにちは":
+        message_send = "あら、あなた" + profile.display_name + "さんよね！？ね、なんでそのアイコン画像にしてるの？不思議！"
     else:
         message_send = "ねぇなんで、「" + message_received + "」って言うの？不思議！"
 
