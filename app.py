@@ -48,9 +48,21 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def message_text(event):
+    message_received = event.message.text
+    message_send = ""
+
+    if message_received == "ヴィラン":
+        message_send = "チャージ満タン、出力30"
+    elif message_received == "つらい":
+        message_send = "後悔して落ち込んでてもね仕方ないんだよ！ねぇ知ってた！？"
+    elif message_received == "文化祭":
+        message_send = "だから今年は絶対優勝するの！最後だもん"
+    else:
+        message_send = "ねぇなんで" + message_received + "って言うの？不思議！"
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text)
+        TextSendMessage(text=message_send)
     )
 
 
