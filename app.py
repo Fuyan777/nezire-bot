@@ -55,7 +55,7 @@ def message_text(event):
 
     if message_received == "ヴィラン":
         message_send = "チャージ満タン、出力30"
-    elif message_received == "つらい":
+    elif message_received == "ミリオ":
         message_send = "後悔して落ち込んでてもね仕方ないんだよ！ねぇ知ってた！？"
     elif message_received == "文化祭":
         message_send = "だから今年は絶対優勝するの！最後だもん"
@@ -63,9 +63,9 @@ def message_text(event):
         message_send = "ムゥー、嫌っ！"
     elif message_received == "あきらめる":
         message_send = "あ、聞いて、知ってる、昔、挫折しちゃってヒーロー諦めちゃって問題起こしちゃった子がいたんだよ、知ってた！？"
-    elif message_received == "大変":
+    elif message_received == "雄英高校":
         message_send = "大変だよねえ、ちゃんと考えないと辛いよ、これは辛いよー"
-    elif message_received == "こんにちは":
+    elif message_received == "A組":
         message_send = "あら、あなた" + profile.display_name + "さんよね！？ね、なんでそのアイコン画像にしてるの？不思議！"
     else:
         message_send = "ねぇなんで、「" + message_received + "」って言うの？不思議！"
